@@ -1,9 +1,7 @@
-######################################################################
-# Choose your favorite C compiler
+
+
 CC = gcc
 
-######################################################################
-# Flags
 FLAG1 = -DNDEBUG
 # FLAG2 = -DKLT_USE_QSORT
 CFLAGS = $(FLAG1) $(FLAG2)
@@ -11,7 +9,6 @@ CFLAGS = $(FLAG1) $(FLAG2)
 # Extra flags for profiling build
 PROFILE_FLAGS = -pg -O2 -Wall
 
-######################################################################
 # Sources
 EXAMPLES = example1.c example2.c example3.c example4.c example5.c
 ARCH = convolve.c error.c pnmio.c pyramid.c selectGoodFeatures.c \
@@ -20,7 +17,6 @@ LIB = -L/usr/local/lib -L/usr/lib
 
 .SUFFIXES:  .c .o
 
-######################################################################
 # Default build
 all:  lib $(EXAMPLES:.c=)
 
@@ -32,7 +28,6 @@ lib: $(ARCH:.c=.o)
 	ar ruv libklt.a $(ARCH:.c=.o)
 	rm -f *.o
 
-######################################################################
 # Example builds (optimized, no profiling)
 example1: libklt.a
 	$(CC) -O3 $(CFLAGS) -o $@ $@.c -L. -lklt $(LIB) -lm
@@ -49,10 +44,7 @@ example4: libklt.a
 example5: libklt.a
 	$(CC) -O3 $(CFLAGS) -o $@ $@.c -L. -lklt $(LIB) -lm
 
-######################################################################
-######################################################################
-# Profiling targets (fixed)
-######################################################################
+# Profiling targets
 
 prof_ex1: libklt.a
 	$(CC) $(PROFILE_FLAGS) $(CFLAGS) -o example1 example1.c -L. -lklt $(LIB) -lm
