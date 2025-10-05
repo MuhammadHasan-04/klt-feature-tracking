@@ -1,0 +1,16 @@
+# Compiled binaries and objects
+*.o
+*.a
+*.out
+example*
+gmon.out
+
+# Output files
+feat*.ppm
+feat*.txt
+feat*.fl
+
+# Build and temporary
+*.log
+*.tmp
+*.bak
