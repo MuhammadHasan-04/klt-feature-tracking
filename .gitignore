@@ -1,16 +1,47 @@
-# Compiled binaries and objects
+
+
+# --- Compiled binaries and object files ---
 *.o
 *.a
 *.out
+*.obj
+*.exe
 example*
 gmon.out
 
-# Output files
-feat*.ppm
-feat*.txt
-feat*.fl
-
-# Build and temporary
+# --- Build intermediates and logs ---
 *.log
 *.tmp
 *.bak
+*.pdb
+
+# --- Output and generated files ---
+feat*.ppm
+feat*.txt
+feat*.fl
+*.pgm
+*.ppm
+*.png
+*.jpg
+*.jpeg
+
+# --- CUDA intermediate and profiling files ---
+*.ptx
+*.cuobjdump
+*.nvvp
+
+# --- System/metadata files ---
+*.Zone.Identifier
+.DS_Store
+Thumbs.db
+
+# --- IDE / editor folders ---
+.vscode/
+.idea/
+*.user
+*.suo
+
+# --- Backup / temp folders ---
+__pycache__/
+build/
+temp/
