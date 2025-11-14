@@ -17,6 +17,9 @@
 #include "klt_util.h"	/* _KLT_FloatImage */
 #include "pyramid.h"	/* _KLT_Pyramid */
 
+
+
+
 extern int KLT_verbose;
 
 typedef float *_FloatWindow;
@@ -435,7 +438,7 @@ static int _trackFeature(
     } else {
       _computeIntensityDifference(img1, img2, x1, y1, *x2, *y2, 
                                   width, height, imgdiff);
-      _computeGradientSum(gradx1, grady1, gradx2, grady2, 
+	_computeGradientSum(gradx1, grady1, gradx2, grady2,
 			  x1, y1, *x2, *y2, width, height, gradx, grady);
     }
 		
@@ -1029,8 +1032,8 @@ static int _am_trackFeatureAffine(
       } else {
         _computeIntensityDifference(img1, img2, x1, y1, *x2, *y2, 
                                     width, height, imgdiff);
-        _computeGradientSum(gradx1, grady1, gradx2, grady2, 
-			    x1, y1, *x2, *y2, width, height, gradx, grady);
+		_computeGradientSum(gradx1, grady1, gradx2, grady2,
+					x1, y1, *x2, *y2, width, height, gradx, grady);
       }
       
 #ifdef DEBUG_AFFINE_MAPPING	
@@ -1527,5 +1530,3 @@ void KLTTrackFeatures(
 	}
 
 }
-
-
